@@ -12,10 +12,8 @@ body {
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-
-    justify-content: center;
+    
+    max-width: 1440px;
 
     margin-left: auto;
     margin-right: auto;
@@ -23,56 +21,94 @@ body {
 
 
 /* navbar */
-.container nav {
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+
+    background-color: #ff6900;
+}
+
+nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 
-    height: 75px;
-
-    color: white;
-    background-color: #ff6900;
+    padding: 20px 0;
 }
 
 .links {
     gap: 15px;
 }
 
-a {
+nav a {
     text-decoration: none;
 
     color: white;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
 }
 
 .logo img {
-    width: 145px;
-    height: 100%;
+    height: 32px;
 }
 /* fine navbar */
 
 
-/* Section */
+/* Main */
+main {
+    padding-top: calc(75px + 60px)
+}
 
-.container .column section {
+#cards-container {
     display: flex;
-    
-    justify-content: space-around;
-
     flex-wrap: wrap;
-
-    padding-bottom: 60px;
+    gap: 50px 20px;
 }
 
-.container .column section .cloath {
-    padding-top: 60px;
-
+#cards-container .vestiti {
+    width: calc(100% / 3 - 20px / 3 * 2);
 }
 
-.cloath img {
-    height: 670px;
+#cards-container .vestiti:nth-of-type(3n + 1) {
+    padding-left: 0;
 }
 
-/* Fine section */
+#cards-container .vestiti:nth-of-type(3n) {
+    padding-right: 0;
+}
+
+#cards-container .vestiti .vestiti-inner img {
+    width: 100%;
+}
+
+.marchio {
+    font-size: 0.9em;
+}
+
+.modello {
+    font-weight: bold;
+}
+
+.prezzo {
+    display: flex;
+    gap: 5px;
+
+    color: red;
+}
+
+.vecchio-prezzo {
+    color: black;
+    text-decoration: line-through;
+    
+}
+
+/* Fine Main */
 
 
 
