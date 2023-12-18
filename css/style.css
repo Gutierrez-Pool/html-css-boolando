@@ -40,17 +40,18 @@ nav {
 }
 
 .links {
+    display: flex;
     gap: 15px;
 }
 
-nav a {
+a {
     text-decoration: none;
 
     color: white;
     font-weight: bold;
 }
 
-nav a:hover {
+a:hover {
     text-decoration: underline;
 }
 
@@ -62,7 +63,8 @@ nav a:hover {
 
 /* Main */
 main {
-    padding-top: calc(75px + 60px)
+    padding-top: calc(75px + 60px);
+    padding-bottom: 60px;
 }
 
 #cards-container {
@@ -87,6 +89,23 @@ main {
     width: 100%;
 }
 
+#cards-container .vestiti .vestiti-inner {
+    position: relative;
+}
+
+#cards-container .vestiti .vestiti-inner img:nth-of-type(2) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+
+    /* transition: 0.3s; */
+}
+
+#cards-container .vestiti .vestiti-inner:hover img:nth-of-type(2){
+    opacity: 1;
+}
+
 .marchio {
     font-size: 0.9em;
 }
@@ -105,7 +124,44 @@ main {
 .vecchio-prezzo {
     color: black;
     text-decoration: line-through;
-    
+}
+
+.tags {
+    display: flex;
+    gap: 5px;
+    position: absolute;
+    bottom: 100px;
+}
+
+.tags .tag {
+    padding: 5px 10px;
+
+    font-weight: bold;
+    color: white;
+}
+
+.tags .rosso {
+    background-color: red;
+}
+
+.tags .verde {
+    background-color: green;
+}
+
+.preferiti {
+    position: absolute;
+    top: 15px;
+    right: 0;
+
+    padding: 15px;
+
+    background-color: white;
+
+}
+
+.preferiti:hover {
+    color: red;
+    background-color: wheat;
 }
 
 /* Fine Main */
@@ -116,14 +172,19 @@ main {
 
 footer {
     display: flex;
+    align-items: center;
     justify-content: space-between;
 
-    align-items: center;
-
     height: 115px;
-
     background-color: #1a1a1a;
     color: white;
 }
 
+footer strong {
+    font-size: 1.2em;
+}
+
+footer a {
+    font-weight: 100;
+}
 /* Fine footer */
